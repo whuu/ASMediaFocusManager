@@ -51,6 +51,8 @@
 @property (nonatomic, assign) BOOL gestureDisabledDuringZooming;
 // Returns whether defocuses with tap. Defaults to NO.
 @property (nonatomic) BOOL isDefocusingWithTap;
+// Hide done button and title label while zooming, Defaults to YES.
+@property (nonatomic) BOOL buttonAndTitleHiddenDuringZooming;
 
 - (void)installOnViews:(NSArray *)views;
 - (void)installOnView:(UIView *)view;

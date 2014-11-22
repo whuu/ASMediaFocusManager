@@ -96,6 +96,7 @@ static CGFloat const kAnimationDuration = 0.5;
         self.isZooming = NO;
         self.gestureDisabledDuringZooming = YES;
         self.isDefocusingWithTap = NO;
+        self.buttonAndTitleHiddenDuringZooming = YES;
     }
     
     return self;
@@ -154,6 +155,7 @@ static CGFloat const kAnimationDuration = 0.5;
     viewController.titleLabel.text = [self.delegate mediaFocusManager:self titleForView:mediaView];
     viewController.mainImageView.image = image;
     viewController.mainImageView.contentMode = imageView.contentMode;
+    viewController.buttonAndTitleHiddenDuringZooming = self.buttonAndTitleHiddenDuringZooming;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL *url;

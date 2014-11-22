@@ -267,7 +267,8 @@ static NSTimeInterval const kDefaultOrientationAnimationDuration = 0.4;
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    [self showAccessoryView:self.scrollView.zoomScale == self.scrollView.minimumZoomScale];
+    if (self.buttonAndTitleHiddenDuringZooming)
+        [self showAccessoryView:self.scrollView.zoomScale == self.scrollView.minimumZoomScale];
 }
 
 #pragma mark - Notifications
